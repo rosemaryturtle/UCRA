@@ -90,10 +90,11 @@ Therefore, some of the steps involve tools and resources beyond this repo.
 
 1. Create a directory named after the country of interest (e.g., "DRC", "Sri Lanka"). This will be the working directory of the repo.
 1. Clone the repo into the working directory. All the notebooks and scripts should be in the working directory with no subdirectories.
+That is, for example, the 00_setup notebook should be located at `./00_setup.ipynb`.
 1. Create an ArcGIS Pro project in this directory, without creating a new subdirectory (i.e., the ArcGIS Pro project should be `./*.aprx`).
 1. Run the notebook 00_setup steps 1-6.
 1. Run the 10s notebooks.
-1. While the 10s notebooks are running, run the Google Earth Engine scripts and download all raster outputs into `./output/GEE`.
+1. While the 10s notebooks are running, run the Google Earth Engine scripts for all AOIs and download all raster outputs into `./output/GEE`.
 Typically, the only GEE script needed for a standard UCRA is summer surface temperature: https://code.earthengine.google.com/dc803e30d92f447854b04f690065efdc.
 1. While the GEE scripts are running, download Fathom data into its own subdirectory: `./data/Fathom`, which should in turn have at least the following subdirectories: `fluvial_undefended` and `pluvial`.
 1. Run the 20s notebooks.
@@ -108,7 +109,7 @@ Second, the landslide map's legend needs to be formatted to show 3 significant d
 1. While the toolbox is running, run the 40s notebooks.
 Note that 41_stats_arcpy needs to be run in the ArcGIS Pro project (or another arcpy environment).
 1. Once the toolbox finishes running, run step 9 of 00_setup notebook and run the "Share maps" and "Share stats" parts of the 50_share_data notebook. If the team asks for raw data, then also run the "Share data files" part, though pay attention to data agreements and avoid sharing proprietary data without permission. This concludes the Python portion of the analysis.
-1. Create an R project and run each thematic R script as needed.
+1. Create an R project in this directory, without creating a new subdirectory (i.e., it should be `./*.Rproj`), and run each thematic R script as needed.
 Note that for the two flood scripts, `flood_csv_processing.R` needs to be run prior to `flood_calc_and_plot.R`.
 1. Finally, some miscellaneous mapping. 
 In `./shapefile`, there should be two shapefiles: one for the country and one for all the city centroids (`centroids.shp`).
